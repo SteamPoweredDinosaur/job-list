@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import SelectInput from "./SelectInput"
+import SelectInput from "./BaseInputComponents/SelectInput"
 
 export default class CurrentStatus extends Component {
   constructor(props) {

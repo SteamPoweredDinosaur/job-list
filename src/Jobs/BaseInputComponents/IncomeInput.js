@@ -1,9 +1,7 @@
 import React, {Component} from "react"
 
 export default class IncomeInput extends Component {
-  render() {
-    const options = this.props.selectOptions
-    
+  render() {    
     return (
         <div>
           <p>Income</p>
