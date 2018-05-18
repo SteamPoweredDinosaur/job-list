@@ -5,15 +5,34 @@ export default class App extends Component {
   constructor(props) {
     super(props)
 
+
+    
+    let data = []
+
+    try {
+       data = JSON.parse(localStorage.getItem('todo-list'))
+       // handle case when local storage not set yet
+       data = data ? data : []
+    } catch(error) {
+      console.log("Corrupted List in local storage")
+    }
+
     this.state = {
-      data: []
+      data
     }
   }
 
   handleClick = () => {
     const p = prompt();
+
+    // P not defined if user presses cancel on prompt, should not be added to state in this case
+    if(!p) {
+      return;
+    }
+
     this.setState(({data}) => {
       data.push(p)
+      localStorage.setItem('todo-list', JSON.stringify(data));
       return {data}
     })
   }
