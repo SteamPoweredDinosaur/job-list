@@ -21,17 +21,16 @@ export default class App extends Component {
   render() {
     const list = [...this.state.data]
 
-    if (list.length === 0) {
-      list.push(<i>Nothing added</i>)
-    }
-
     return (
       <div>
-        <ListGroup>
-          {list.map((item, i) =>
-            <ListGroupItem key={i}>{item}</ListGroupItem>)
-          }
-        </ListGroup>
+        {list.length === 0 ? 
+                <p>Nothing added</p> :         
+                <ListGroup>
+                  {list.map((item, i) =>
+                    <ListGroupItem key={i}>{item}</ListGroupItem>)
+                  }
+                </ListGroup>}
+        
         <Button onClick={this.handleClick}>Add</Button>
       </div>
     )
