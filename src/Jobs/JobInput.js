@@ -1,7 +1,7 @@
 import React, {Component} from "react"
-import SelectInput from "./SelectInput"
-import IncomeInput from "./IncomeInput"
-import TextInput from "./TextInput"
+import SelectInput from "./BaseInputComponents/SelectInput"
+import IncomeInput from "./BaseInputComponents/IncomeInput"
+import TextInput from "./BaseInputComponents/TextInput"
 
 export default class JobInput extends Component {
   constructor(props) {
